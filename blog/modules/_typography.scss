@@ -1,0 +1,9 @@
+.post-categories {
+    li {
+        display: inline-block;
+        
+        :after {
+            content: ' |';
+        }
+    }
+}

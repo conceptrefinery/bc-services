@@ -1,0 +1,51 @@
+@mixin link-style() {
+        text-decoration: none;
+   color: black;
+      &:hover {
+        text-decoration: none;
+        color: black;
+        opacity: 0.8;
+        }  
+      
+    }
+
+
+/* ## MEDIA QUERY MIXINS
+--------------------------------------------- */
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$phone: 480px;
+$small-screen: 1020px;
+
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+    
+@mixin phone {
+    @media (max-width: #{$phone}) {
+        @content;
+    }
+}
+
+@mixin phablet {
+    @media (min-width: #{$phone}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+    @media (max-width: #{$small-screen}) {
+        @content;
+    }
+}
+   
