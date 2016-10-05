@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Action call */
 #action-call {
 	height: 968px;
-	/*background: url(images/action-call.png) no-repeat center center;*/
+	background: url(images/action-call.png) no-repeat center center;
 	margin-bottom: -187px;
 }
 #action-call .wrap {
@@ -221,11 +221,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hex .widget_sp_image-description p {
 	margin-bottom: 10px;
+    display: none;
 }
 .hex .find-out-more {
-	float: right;
+/*	float: right;*/
 	color: #e1b8b3;
+    font-size: 18px;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    display: inline;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
 }
+
+@media screen and (max-width: 1105px) and (min-width: 769px) {
+    .hex .find-out-more {
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hex .find-out-more {
+        text-align: center;
+        padding-right: 20%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hex .find-out-more {
+        text-align: center;
+        margin-right: -30%;
+    }
+}
+
 .hex .find-out-more:hover {
 	color: #fff;
 }
@@ -868,7 +898,8 @@ h1, h2, h3, h4, h5, h6 {
 		float: none;
 		position: absolute;
 		z-index: 999;
-		right: 0;
+		right: 20%;
+        padding-top: 30px;
 	}
 	.hex-row.even {
 		margin-left: 191px;
@@ -958,12 +989,8 @@ h1, h2, h3, h4, h5, h6 {
 		width: 100%;
 		font-size: 12px;
 	}
-	.hex .find-out-more {
-		float: none;
-		width: 100px;
-		margin: 0 auto;
-		display: block;
-	}
+	
+
 	.hex-row.even {
 		margin-left: 150px;
 	}
@@ -1070,9 +1097,7 @@ h1, h2, h3, h4, h5, h6 {
 	    /* margin-right: 20px; */
 	    margin-top: 30px;
 	}
-	.hex .find-out-more {
-	    float: right;
-	}
+	
 	#about-area .wrap {
 		max-width: 100%;
 	}
@@ -1185,12 +1210,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: 100%;
 		font-size: 12px;
 	}
-	.hex .find-out-more {
-		float: none;
-		width: 100px;
-		margin: 0 auto;
-		display: block;
-	}
+	
 	#ob_content {
 		min-width: 90%;
 		padding: 15px;
@@ -1249,12 +1269,15 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+h4.widget-title.widgettitle {
+    font-size: 18px;
+}
 
 
 
 .widget_sp_image .widget-title {
-    font-size: 18px;
-    font-size: 1.8rem;
+    font-size: 24px;
+/*    font-size: 1.8rem;*/
     margin-bottom: 20px;
     padding-top: 149px;
     padding-left: 11px;
