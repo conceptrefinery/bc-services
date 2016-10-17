@@ -1,7 +1,7 @@
 
 
 .wrap {
-    padding-top: 20px;
+//    padding-top: 20px;
 }
 .revSlider {
     -webkit-box-shadow: 0 1px 10px 0 #090909;
@@ -232,7 +232,7 @@
 }
 
 #singleContent {
-    padding: 20px 50px 0 30px;
+    padding: 20px 50px 0 50px;
     @media screen and (max-width: 995px) {
         padding: 20px;
         width: 100%;
@@ -259,6 +259,13 @@
     
     text-align: center;
     margin: 0 auto;
+    padding: 0 20px 0 35px;
+}
+
+@media screen and (max-width: 996px) {
+    .single-thumb {
+        padding: 10px;
+    }
 }
 
 .firstLetter {
@@ -288,3 +295,28 @@
         
     }
 }
+
+.comment-reply-title {
+    margin-top: 150px;
+}
+
+.post-link {
+    @include phone {
+        display: none;
+    }
+}
+
+.post-nav-row-mobile {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .post-nav-row-mobile {
+        visibility: visible;
+    }
+    .post-nav-row {
+        visibility: hidden;
+    }
+}
+

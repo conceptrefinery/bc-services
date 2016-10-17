@@ -60,6 +60,11 @@ function bc_theme_scripts() {
     
      //Get masonry js
     wp_enqueue_script( 'masonry', get_stylesheet_directory_uri() . '/js/masonry.js', array('jquery'), '1.1.0', true );
+    
+    wp_enqueue_script( 'smooth-scroll', get_stylesheet_directory_uri() . '/js/smooth-scroll.js', array('jquery'), '1.1.0', true );
+    
+    
+    
 
 }
 
@@ -124,7 +129,7 @@ remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
-
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 
 remove_action( 'genesis_header', 'genesis_do_header' );
 
@@ -463,3 +468,4 @@ genesis_register_sidebar( array(
 	'name' => __( 'Blog Sidebar', 'genesis' ),
 	'description' => __( 'Sidebar for blog page', 'bctheme' )
 ) );
+

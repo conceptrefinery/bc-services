@@ -17,7 +17,7 @@ add_action('genesis_loop','cr_single_loop');
     function cr_single_loop() {
         if (have_posts()) : 
             while (have_posts()) : the_post(); ?>
-               <div class="container">
+               <div class="container2">
                
                <div class="row">
                    <div id="singleContent" class="col-sm-8">
@@ -25,7 +25,7 @@ add_action('genesis_loop','cr_single_loop');
                        <p><?php the_author_posts_link(); ?> | <?php the_date('F j, Y'); ?> | <a href="<?php comments_link(); ?>"><?php comments_number( 'No comments', 'One comment', '% comments' ); ?></a></p>
                        <div class="row">
                     
-                           <div class="single-thumb"><?php the_post_thumbnail('large'); ?></div>
+                           <div class="single-thumb image-responsive"><?php the_post_thumbnail('large'); ?></div>
                            <div class="firstLetter">
                            <?php $lead_paragraph = get_field('lead_paragraph'); ?>
                                <?php echo cr_get_first_letter($lead_paragraph); ?>
@@ -37,31 +37,8 @@ add_action('genesis_loop','cr_single_loop');
                            </div>
                            
                        </div><!--/row-->
-                       <!--Function to generate comments template-->
-                      
-                      <?php genesis_get_comments_template(); ?>
-                   </div>
-                   <div id="singleSidebar" class="col-sm-4">
-                       <?php dynamic_sidebar('single_sidebar'); ?>
-                   </div>
-                   
-               </div><!--/row-->
-                
-               </div><!--/container-->
-         <?php    endwhile;
-        endif;
-        
-        
-        
-    }
-
-
-add_action('genesis_before_comments','custom_post_navigation');
-
-function custom_post_navigation()
-{
-?>
-    <div class="row">
+                       
+                         <div class="row post-nav-row">
             <?php $prev_post = get_previous_post();?>
              <?php $url = get_permalink($prev_post->ID); ?>
         <div class="col-sm-3"><a href="<?php echo $url; ?>"><span class="prev"><span class="fa fa-chevron-left"></span>&nbsp;Previous Post</span></a><br> <?php previous_post_link('%link', '%title');    ?><br>
@@ -82,7 +59,76 @@ function custom_post_navigation()
              </a>
         </div>
     </div><!--/row-->
+                      
+        <div class="row post-nav-row-mobile">
+            <?php $prev_post = get_previous_post();?>
+             <?php $url = get_permalink($prev_post->ID); ?>
+        <div class="col-xs-6 col-sm-3"><a href="<?php echo $url; ?>"><span class="prev"><span class="fa fa-chevron-left"></span>&nbsp;Previous Post</span></a><br> <?php previous_post_link('%link', '%title');    ?><br>
+        
+              <a href="<?php echo $url; ?>"> <br>
+                
+                
+             </a>
+        </div>
+        
+        <?php $next_post = get_next_post();?>
+        <?php $url = get_permalink($next_post->ID); ?>
+         <div class="col-xs-6 col-sm-3" style="text-align:right"><a href="<?php echo $url; ?>"><span class="prev">Next Post &nbsp;</span><span class="fa fa-chevron-right"></span></a><br> <?php next_post_link('%link', '%title');    ?><br>  
+             <a href="<?php echo $url; ?>"> 
+                
+             </a>
+        </div>
+    </div><!--/row-->              
+                       
+                       
+                       <!--Function to generate comments template-->
+                      <row class="comments-row">
+                      <?php genesis_get_comments_template(); ?>
+                      </row>
+                   </div>
+                   <div id="singleSidebar" class="col-sm-4">
+                       <?php dynamic_sidebar('single_sidebar'); ?>
+                   </div>
+                   
+               </div><!--/row-->
+                
+               </div><!--/container-->
+         <?php    endwhile;
+        endif;
+        
+        
+        
+    }
+
+
+//add_action('genesis_before_comments','custom_post_navigation');
+
+function custom_post_navigation()
+{
+?>
+    <div class="row post-nav-row">
+            <?php $prev_post = get_previous_post();?>
+             <?php $url = get_permalink($prev_post->ID); ?>
+        <div class="col-sm-3"><a href="<?php echo $url; ?>"><span class="prev"><span class="fa fa-chevron-left"></span>&nbsp;Previous Post</span></a><br> <span class="post-link">l<?php previous_post_link('%link', '%title');    ?></span><br>
+        
+              <a href="<?php echo $url; ?>"> <br>
+                
+                
+             </a>
+        </div>
+        <div class="col-sm-6">
+            
+        </div>
+        <?php $next_post = get_next_post();?>
+        <?php $url = get_permalink($next_post->ID); ?>
+        <div class="col-sm-3" style="text-align:right"><a href="<?php echo $url; ?>"><span class="prev">Next Post &nbsp;</span><span class="fa fa-chevron-right"></span></a><br><span class="post-link"> <?php next_post_link('%link', '%title');    ?></span><br>  
+             <a href="<?php echo $url; ?>"> 
+                
+             </a>
+        </div>
+    </div><!--/row-->
     
+
     
 <?php
 }
