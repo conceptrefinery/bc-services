@@ -49,7 +49,8 @@ function bc_theme_scripts() {
     wp_enqueue_style( 'bc-css', get_stylesheet_directory_uri() . '/style.css', null, '1.2.2' );
 
     wp_enqueue_style('blog-css', get_stylesheet_directory_uri() . '/blog/main-blog.css');
-
+    
+    wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 
 
     wp_enqueue_script( 'flexslider-js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '1.0.0', true );
@@ -63,7 +64,7 @@ function bc_theme_scripts() {
     
     wp_enqueue_script( 'smooth-scroll', get_stylesheet_directory_uri() . '/js/smooth-scroll.js', array('jquery'), '1.1.0', true );
     
-    
+    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), '3.3.4', true );
     
 
 }

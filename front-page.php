@@ -84,7 +84,7 @@ function bc_contact_area() {
 		<div class="wrap">
 			<div class="contact-left">
 				<h6>Fast, quick and reliable.</h6>
-				<h3>Contact Us</h3>
+				<h3 id="contact-anchor" >Contact Us</h3>
 				<div class="br-line"></div>
 				<?php //echo do_shortcode( '[contact-form-7 id="13" title="Contact us"]' ); ?>
 				<?php bc_contact_form(); ?>

@@ -3,7 +3,11 @@
 .intro-title {
     font-size: 42px;
     margin-bottom: 10px;
+    
+  
 }
+
+
 
 .ldg-bg-img {
     background: url(../images/jets-helicopters-top-img.jpg) no-repeat;
@@ -25,7 +29,7 @@
 
 #column-text {
     background: black;
-    color: white;
+    color: $bc-pink;
     padding: 50px 10px 50px 20px;
    
     
@@ -47,7 +51,18 @@
 
 .scroll-btn {
     text-align: center;
+    font-size: 50px;
+    
+    .fa-chevron-circle-down {
+        color: white;
+        
+        &:hover {
+            color: $bc-pink;
+        }
+    }
 }
+
+
 
 /* ## Map Section
 --------------------------------------------- */
@@ -60,15 +75,39 @@
 }
 
 .map-text {
+    
+    @extend .col-sm-5;
+    
     text-align: center;
+    padding-top: 30px;
+    color: $bc-black;
+    font-weight: 600;
+    
+    p {
+        margin-bottom: 5px;
+    }
+    
+    @include tablet {
+        font-size: 16px;
+       width: 100%;
+        padding-top: 70px;
+    }
+    
+    @include phone {
+        font-size: 14px;
+    }
+    
+    @include extra-small {
+        font-size: 12px;
+    }
 }
 
 /* ## Client Reviews
 --------------------------------------------- */
 
 .client-reviews {
-    background: $bc-pink;
-    color: white;
+    background: $bc-black;
+    color: $bc-pink;
     text-align: center;
     height: 350px;
     position: relative;
@@ -79,11 +118,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    
+    @include phone {
+        font-size: 14px;
+    }
+    
+     @include extra-small {
+        font-size: 12px;
+    }
 }
 
 .contact-btn {
     text-align: center;
-    min-height: 200px;
+   height: 200px;
    position: relative;
     
     button {
@@ -94,6 +141,21 @@
     background: white;
     border: solid 5px $bc-pink;
     color: $bc-black;    
+        
+     @include phablet {
+            width: 100%;
+        }        
+        
+     @include extra-small {
+        font-size: 12px;
+         width: 100%;
+    }  
+      
+        &:hover {
+            background: $bc-black;
+            color: $bc-pink;
+        }
+       
         
     }
     

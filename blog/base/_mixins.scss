@@ -17,6 +17,7 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 $phone: 480px;
 $small-screen: 1020px;
+$extra-small: 320px;
 
 
 @mixin tablet {
@@ -45,6 +46,12 @@ $small-screen: 1020px;
 
 @mixin small-screen {
     @media (max-width: #{$small-screen}) {
+        @content;
+    }
+}
+
+@mixin extra-small {
+    @media screen and (max-width: #{$extra-small}) {
         @content;
     }
 }
