@@ -470,3 +470,11 @@ genesis_register_sidebar( array(
 	'description' => __( 'Sidebar for blog page', 'bctheme' )
 ) );
 
+
+//Change default email FROM
+
+ 
+function ec_mail_from ($email ){
+  return 'admin@bc-services.com'; // new email address from sender.
+}
+add_filter( 'wp_mail_from', 'ec_mail_from' );

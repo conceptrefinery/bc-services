@@ -5,83 +5,145 @@
 
 add_action( 'genesis_after_header', 'bc_action_call' );
 function bc_action_call() {
+    
+     $category_image         = get_field('category_image');
+     $category_image_large   =  get_field('category_image_large');
+     $category_image_medium   =  get_field('category_image_medium');
+     $category_image_small   =  get_field('category_image_small');
+     $sub_heading            = get_field('sub_heading');
+
 	?>
+	
+	
+	
+	
+	
 	<div class="action-call">
-		<div class="wrapBlog">
-            <div class="logo-container">
-				<a href="/">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png">
-				</a>
-			</div>
-		
-			
-		</div>
+	
+	<div class="action-call-header" style="position:absolute; " >
+	     
+                <img src="http://localhost:8888/bc-services-copy/wp-content/uploads/2016/10/logo.png" alt="">   
+                <p class="lead-title"><?php the_title(); ?></p>
+                <p class="sub-heading"><?php echo $sub_heading ?></p>
+                
 	</div>
+	
+	  <div class="scroll-btn-header">
+            <a href="#benefits-text"><span class="fa fa-chevron-circle-down"></span></a>
+            </div>
+
+</div>
+
+<script>
+    
+    (function($){
+      $size = $(window).width();  
+        
+        $(".action-call").css({"background":"url(<?php echo $category_image['url']; ?>) no-repeat","background-size":"cover", "background-position":"center","height":"90vh", "position":"relative"})
+        
+         if($size<=1024 && $size>=769) {
+        $(".action-call").css({"background-image":"url(<?php echo $category_image_large['url']; ?>) no-repeat", "background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     }
+     
+     else if($size<=768) {
+          $(".action-call").css({"background":"url(<?php echo $category_image_medium['url']; ?>) no-repeat", "background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     }
+        
+     else if($size<=414) {
+         $(".action-call").css({"background":"url(<?php echo $category_image_small['url']; ?>) no-repeat", "background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     }    
+        
+        
+    }) (jQuery);
+    
+    (function($) {  
+ $(window).resize(function() {
+     
+     $size = $(window).width();  
+//  $( ".action-call-header" ).html($size);
+     
+     $(".action-call").css({"background":"url(<?php echo $category_image['url']; ?>) no-repeat","background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     
+     if($size<=1024 && $size>=769) {
+        $(".action-call").css({"background":"url(<?php echo $category_image_large['url']; ?>) no-repeat", "background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     }
+     
+     else if($size<=768) {
+          $(".action-call").css({"background":"url(<?php echo $category_image_medium['url']; ?>) no-repeat", "background-size":"cover", "background-position":"center","height":"100vh", "position":"relative"})
+     }
+    
+     
+});
+    
+})  (jQuery);    
+</script>
+
+
+
+	
 	<?php
 }
 
-add_action('genesis_loop','landing_page_section1');
+add_action('genesis_after_header','landing_page_section1');
 function landing_page_section1() {
+    
+    $category_image         = get_field('category_image');
+    $column_1_font_icon     = get_field('column_1_font_icon');
+    $column_1_title         = get_field('column_1_title');
+    $column_1_content       = get_field('column_1_content');
+    $column_2_font_icon     = get_field('column_2_font_icon');
+    $column_2_title         = get_field('column_2_title');
+    $column_2_content       = get_field('column_2_content');
+    $column_3_font_icon     = get_field('column_3_font_icon');
+    $column_3_title         = get_field('column_3_title');
+    $column_3_content       = get_field('column_3_content');
+    $process_image          = get_field('process_image');
+    $process_text           = get_field('process_text');
+    $client_review          = get_field('client_review');
+    
     ?>
     
-    
-        <div class="ldg-bg-img" style="background: <?php echo get_stylesheet_directory_uri(); ?>/images/jets-helicopters-top-img.jpg no-repeat;">
-                <p class="intro-title">Jets & Helicopters</p>
-                <p>Start thinking about your destination while we take care of the journey</p>
-        </div><!--/ldg-bg-img-->
+      <section class="benefits-process">
 
-
-        <div class="col-sm-12 benefits-text">
+        <div id="benefits-text" class="col-sm-12 benefits-text">
         
             <div id="column-text" class="col-sm-4">
                 
-                <p class="column-lead"><span class="fa fa-clock-o"></span> <br> Depart & arrive when you decide</p>
-                <p>With your own personal aircraft solution you are in the drivers seat. You decide what time and which destination suits you.</p>
+                <p class="column-lead"><span class="fa <?php echo $column_1_font_icon ?>"></span> <br> <?php echo $column_1_title ?></p>
+                <p><?php echo $column_1_content ?></p>
             </div><!--/colsm4-->
             
            <div id="column-text" class="col-sm-4">
-                <p class="column-lead"><span class="fa fa-clock-o"></span> <br>Depart & arrive when you decide</p>
-                <p>With your own personal aircraft solution you are in the drivers seat. You decide what time and which destination suits you.</p>
+                <p class="column-lead"><span class="fa <?php echo $column_2_font_icon ?>"></span> <br><?php echo $column_2_title ?></p>
+                <p><?php echo $column_2_content ?></p>
             </div><!--/colsm4-->
             
             <div id="column-text" class="col-sm-4">
-                <p class="column-lead"><span class="fa fa-clock-o"></span> <br>Depart & arrive when you decide</p>
-                <p>With your own personal aircraft solution you are in the drivers seat. You decide what time and which destination suits you.</p>
+                <p class="column-lead"><span class="fa <?php echo $column_3_font_icon ?>"></span> <br><?php echo $column_3_title  ?></p>
+                <p><?php echo $column_3_content ?></p>
             </div><!--/colsm4-->
             
-            <div class="col-sm-12 scroll-btn">
-            <a href="#bg-map"><span class="fa fa-chevron-circle-down"></span></a>
-            </div>
+           
             
        </div>
         
       
-          <div id="bg-map" class="col-sm-12">
+          <div id="bg-map" class="col-sm-12" style="background-image: url(<?php echo $process_image ?>); background-repeat:no-repeat;background-size:cover; background-position:cover;" >
           <div class="map-text">
-              <p  class="column-lead">
-                  We will be the only number you need for all your aviation requirements
-              </p>
-                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/map-line.jpg" alt="">
-              <p>Initial consultation to understand your requirements</p>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/map-line.jpg" alt="">
-              <p>You decide when & where</p>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/map-line.jpg" alt="">
-              <p>We will take care of the rest, the plane, the crew, the catering, immigration, trasnport to & from the airport</p>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/map-line.jpg" alt="">
-              <p>You arrive rested & relaxed after a stress free travel experience</p>
+              <?php echo $process_text ?>
           </div>
            
-          </div>
-          <div class="col-sm-12 scroll-btn" style="margin-top:-80px;" >
+          <div class="scroll-btn-process" >
             <a href="#review-content"><span class="fa fa-chevron-circle-down"></span></a>
             </div>
+          </div>
      
-          
+          </section>
         
             <div class="col-sm-12 client-reviews">
               <div id="review-content" class="review-content">
                   <p class="lead">What Our Clients Say</p>
-                  <p>Health goth listicle everyday carry, chambray kombucha flexitarian banjo quinoa paleo artisan plaid. Four dollar toast 3 wolf moon bespoke butcher, skateboard meh leggings actually shoreditch cornhole.</p>
+                  <p><?php echo $client_review ?></p>
               </div>
             </div>
             
@@ -114,7 +176,7 @@ add_action('genesis_before_footer','modal');
         <h4 class="modal-title">Get In Touch</h4>
       </div>
       <div class="modal-body">
-        <?php bc_contact_form(); ?>
+        <?php echo do_shortcode('[contact-form-7 id="13" title="Contact us"]'); ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -131,5 +193,6 @@ add_action('genesis_before_footer','modal');
 
 remove_action('genesis_loop','genesis_do_loop');    
 remove_action('genesis_entry_content','genesis_do_post_content');
+
 
     genesis();
