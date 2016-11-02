@@ -107,6 +107,8 @@ function landing_page_section1() {
 
         <div id="benefits-text" class="col-sm-12 benefits-text">
         
+         <div class="column-title lead">Why Choose Us?</div>
+        
             <div id="column-text" class="col-sm-4">
                 
                 <p class="column-lead"><span class="fa <?php echo $column_1_font_icon ?>"></span> <br> <?php echo $column_1_title ?></p>
@@ -123,13 +125,14 @@ function landing_page_section1() {
                 <p><?php echo $column_3_content ?></p>
             </div><!--/colsm4-->
             
-           
+        
             
        </div>
         
       
           <div id="bg-map" class="col-sm-12" style="background-image: url(<?php echo $process_image ?>); background-repeat:no-repeat;background-size:cover; background-position:cover;" >
           <div class="map-text">
+             <p  class="process-title">Learn About Our Process</p>
               <?php echo $process_text ?>
           </div>
            

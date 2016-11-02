@@ -32,6 +32,12 @@ add_theme_support( 'html5' );
 
 add_theme_support( 'genesis-responsive-viewport' );
 
+add_action('wp_enqueue_scripts','bc_blog_styles');
+    function bc_blog_styles() {
+        if (!is_page_template('page-experiences_child.php')) {
+            wp_enqueue_style('blog-css', get_stylesheet_directory_uri() . '/blog/main-blog.css');
+        }
+    }
 
 
  
@@ -48,7 +54,7 @@ function bc_theme_scripts() {
 
     wp_enqueue_style( 'bc-css', get_stylesheet_directory_uri() . '/style.css', null, '1.2.2' );
 
-    wp_enqueue_style('blog-css', get_stylesheet_directory_uri() . '/blog/main-blog.css');
+//    wp_enqueue_style('blog-css', get_stylesheet_directory_uri() . '/blog/main-blog.css');
     
     wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 
