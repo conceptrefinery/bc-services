@@ -313,7 +313,19 @@ h1, h2, h3, h4, h5, h6 {
 	background: #111;
 	margin-bottom: 0;
 	overflow: hidden;
+    border-style: none;
 }
+
+#testimonials-area > .flexslider {
+    border-style: none;
+}
+
+
+.flexslider {
+    border-style: none!important;
+    border: 0px!important;
+}
+
 .flex-direction-nav {
 	display: none;
 }
