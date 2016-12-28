@@ -75,6 +75,42 @@ function bc_testimonials_area() {
 	<?php
 }
 
+//why us section
+
+add_action('genesis_before_footer','bc_why_us');
+    function bc_why_us() {
+        ?>
+        
+                <div id="benefits-text" class="col-sm-12 benefits-text">
+        
+         <div class="column-title lead">Why Choose Us?</div>
+        
+            <div id="column-text" class="col-sm-4">
+                
+                <p class="column-lead"><span class="fa fa-clock-o"></span> <br> Convenience | Save Time</p>
+                <p>We offer one point of contact for all of our clients. Simply call, email or text your own personal concierge who will take care of everything for you, allowing you to carry on with your day, without disturbance. We are here to give you back your most valuable asset: “Time”. </p>
+            </div><!--/colsm4-->
+            
+           <div id="column-text" class="col-sm-4">
+                <p class="column-lead"><span class="fa fa-glass"></span> <br>Expertise | Access | Knowledge</p>
+                <p>We are Sydney’s experts and we know our city inside out. Our clients rely on us to keep them on the pulse of what’s hot and happening in Sydney and beyond. We have the knowledge, expertise and contacts to secure exclusive access for you. </p>
+            </div><!--/colsm4-->
+            
+            <div id="column-text" class="col-sm-4">
+                <p class="column-lead"><span class="fa  fa-diamond"></span> <br>Personal Service</p>
+                <p>Our clients receive a highly tailored service that is proactive and pre-empts their lifestyle needs. Each recommendation and booking is specific to each individual client. The make sure we find the right solution for you.
+
+</p>
+            </div><!--/colsm4-->
+            
+        
+            
+       </div>
+        
+        
+        <?php
+    }
+
 
 // Contact area
 add_action( 'genesis_before_footer', 'bc_contact_area' );
